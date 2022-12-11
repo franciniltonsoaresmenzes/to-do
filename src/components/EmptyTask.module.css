@@ -1,0 +1,23 @@
+.emptyTask {
+  padding: 4rem 0;
+  border-top: 1px solid #333333;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyTask > img {
+  margin-bottom: 1rem;
+}
+
+.emptyTask {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.emptyTask span {
+  font-weight: 400;
+}

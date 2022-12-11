@@ -1,7 +1,10 @@
+import { CollectionTask } from './CollectionTask'
 import { EmptyTask } from './EmptyTask'
 import styles from './Task.module.css'
 
 export function Task() {
+  const isTask = true
+
   return (
     <section>
       <header className={styles.navTask} >
@@ -16,7 +19,7 @@ export function Task() {
         </div>
       </header>
 
-      <EmptyTask />
-    </section>
+        {isTask ? <CollectionTask/> : <EmptyTask />}
+      </section>
   )
 }

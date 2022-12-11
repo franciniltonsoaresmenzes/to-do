@@ -3,6 +3,7 @@ import styles from './App.module.css'
 
 import { Header } from './components/Header'
 import { AddNewTask } from './components/AddNewTask'
+import { Task } from './components/Task'
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Header/>
       <main className={styles.content} >
         <AddNewTask/>
+        <Task />
       </main>
     </>
   )

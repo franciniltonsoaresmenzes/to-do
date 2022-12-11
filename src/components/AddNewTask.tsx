@@ -1,10 +1,17 @@
+import { PlusCircle } from 'phosphor-react'
 import styles from './AddNewTask.module.css'
 
 export function AddNewTask() {
   return (
-    <form>
-      <input type="text"/>
-      <button type='button' >Criar</button>
+    <form className={styles.formTask} >
+      <input
+        type="text"
+        placeholder="Adicione uma nova tarefa"
+      />
+      <button type='button'>
+        Criar
+        <PlusCircle size={16} weight='bold'/>
+      </button>
     </form>
   )
 }

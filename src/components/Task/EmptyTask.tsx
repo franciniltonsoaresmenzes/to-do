@@ -1,6 +1,6 @@
 import styles from './EmptyTask.module.css'
 
-import clipBoard from '../assets/Clipboard.svg'
+import clipBoard from '../../assets/Clipboard.svg'
 
 export function EmptyTask() {
   return(

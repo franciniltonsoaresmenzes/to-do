@@ -1,9 +1,9 @@
 import './global.css'
 import styles from './App.module.css'
 
-import { Header } from './components/Header'
-import { AddNewTask } from './components/AddNewTask'
-import { Task } from './components/Task'
+import { Header } from './components/Header/Header'
+import { AddNewTask } from './components/Task/AddNewTask'
+import { Task } from './components/Task/Task'
 
 function App() {
 

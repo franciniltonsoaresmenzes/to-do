@@ -92,6 +92,7 @@ export function Task() {
             taskCollection.map(task => (
               <CollectionTask
                 id={task.id}
+                key={task.id}
                 title={task.title}
                 isComplete={task.isComplete}
                 onDeleteTask={deleteTask}

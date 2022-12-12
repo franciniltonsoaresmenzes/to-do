@@ -1,3 +1,53 @@
+
+.formTask {
+  display: flex;
+  gap: 8px;
+
+  margin-top: -1.5rem;
+
+}
+
+.formTask input {
+  width: 100%;
+  color: var(--gray-300);
+  background: var(--gray-500);
+
+  font-size: var(--font-xl);
+  font-weight: 400;
+  line-height: 1.4;
+
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.formTask input:focus {
+  color: var(--gray-100);
+}
+
+.formTask button {
+  background: var(--blue--dark);
+  color: var(--gray-100);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: none;
+
+  font-weight: 700;
+  font-size: var(--font-m);
+  line-height: 1.4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  transition: background .1s;
+}
+
+.formTask button:hover {
+  background: var(--blue);
+}
+
 section {
   margin-top: 4rem;
 }

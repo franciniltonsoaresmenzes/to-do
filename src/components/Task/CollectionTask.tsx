@@ -1,9 +1,10 @@
 import { Check, Trash } from 'phosphor-react'
 import { useState } from 'react'
+import { taskProps } from '../../API/Task'
 import styles from './CollectionTask.module.css'
 
-export function CollectionTask() {
-  const [icon, setIcon] = useState(false)
+export function CollectionTask({ title, isComplete }: taskProps) {
+  const [icon, setIcon] = useState(isComplete)
 
   function handleCheck() {
     setIcon(!icon)
@@ -18,7 +19,7 @@ export function CollectionTask() {
       >
         { icon ? <Check weight='bold' />  : null}
       </button>
-      <p className={icon ? styles.checked : styles.noChecked} >Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+      <p className={icon ? styles.checked : styles.noChecked} >{title}</p>
       <Trash 
         size={12}
         className={styles.trash}

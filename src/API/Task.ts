@@ -16,5 +16,10 @@ export const tasks:taskProps[] = [
     id: uuidv4(),
     title: 'Estudar javas',
     isComplete: true
+  },
+  {
+    id: uuidv4(),
+    title: 'Estudar reactjs',
+    isComplete: true
   }
 ]

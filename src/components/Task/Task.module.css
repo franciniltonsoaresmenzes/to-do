@@ -84,8 +84,7 @@ section {
   align-items: center;
   gap: 10px;
 
-  width: 25px;
-  height: 19px;
+  padding: 2px 8px;
 
   background: #333333;
   border-radius: 999px;

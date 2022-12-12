@@ -11,8 +11,6 @@ import { PlusCircle } from 'phosphor-react'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
 export function Task() {
-  const isTask = true
-
   const [newTaskTex, setNewTaskTex] = useState<string>('')
 
   const [ task, setTask ] = useState<taskProps[]>([...tasks])
@@ -33,6 +31,15 @@ export function Task() {
     setNewTaskTex(event.target.value)
   }
 
+  function deleteTask(id: string) {
+    const taskWithoutDeleteOne = task.filter(task => task.id !== id)
+    setTask(taskWithoutDeleteOne)
+  }
+
+  const isTask = task.length
+
+  const isCheckedTask = task.reduce((acumulador, x) => x.isComplete ? ++acumulador : acumulador, 0)
+
   return (
     <>
       <form className={styles.formTask} onSubmit={handleCreateNewTask} >
@@ -52,21 +59,22 @@ export function Task() {
         <header className={styles.navTask} >
           <div className={styles.indice} >
             <span className={styles.indexTask} >Tarefas criadas</span>
-            <span className={styles.index} >0</span>
+            <span className={styles.index} >{task.length}</span>
           </div>
 
           <div className={styles.indice} >
             <span className={styles.indexTask} >Concluídas</span>
-            <span className={styles.index} >0</span>
+            <span className={styles.index} >{isCheckedTask} de { task.length }</span>
           </div>
         </header>
 
-          {isTask ?
+          {isTask > 0 ?
             task.map(task => (
               <CollectionTask
                 id={task.id}
                 title={task.title}
                 isComplete={task.isComplete}
+                onDeleteTask={deleteTask}
               />
           ))
           : <EmptyTask />}

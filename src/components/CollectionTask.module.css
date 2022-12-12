@@ -1,0 +1,68 @@
+.card {
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  padding: 1rem;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: .75rem;
+}
+
+.card .false {
+  background: transparent;
+  border: 2px solid var(--blue);
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .false:hover {
+  border: 2px solid var(--blue--dark);
+  background: rgba(30, 111, 159, .2);
+}
+
+.true {
+  border: 2px solid var(--purple-dark);
+  background: var(--purple-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+}
+
+.card .noChecked {
+  font-weight: 400;
+  font-size: var(--font-m);
+  line-height: 1.4;
+  color: var(--gray-100);
+}
+
+.checked {
+  text-decoration-line: line-through;
+  font-weight: 400;
+  font-size: var(--font-m);
+  line-height: 1.4;
+  color: var(--gray-300);
+}
+
+.trash {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.trash:hover {
+  background: var(--gray-400);
+  color: var(--danger);
+  border-radius: 8px;
+}

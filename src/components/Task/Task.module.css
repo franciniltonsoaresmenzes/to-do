@@ -81,6 +81,7 @@ section {
 
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 
@@ -88,4 +89,13 @@ section {
 
   background: #333333;
   border-radius: 999px;
+}
+
+@media (max-width: 317px) {
+  .formTask {
+    flex-direction: column;
+  }
+  .navTask .indice {
+    flex-direction: column;
+  }
 }

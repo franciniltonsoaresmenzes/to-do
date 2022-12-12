@@ -1,6 +1,6 @@
 import styles from './Task.module.css'
 
-import { taskProps, tasks } from '../../API/Task'
+import { taskProps } from '../../API/Task'
 
 import { v4 as uuidv4 } from 'uuid'
 
@@ -10,10 +10,16 @@ import { EmptyTask } from './EmptyTask'
 import { PlusCircle } from 'phosphor-react'
 import { ChangeEvent, FormEvent, useState } from 'react'
 
+export interface taskProps {
+  id: string;
+  title: string;
+  isComplete: boolean;
+}
+
 export function Task() {
   const [newTaskTex, setNewTaskTex] = useState<string>('')
 
-  const [ taskCollection, setTaskCollection ] = useState<taskProps[]>([...tasks])
+  const [ taskCollection, setTaskCollection ] = useState<taskProps[]>([])
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()

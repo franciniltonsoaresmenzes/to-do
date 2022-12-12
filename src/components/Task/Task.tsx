@@ -13,7 +13,7 @@ import { ChangeEvent, FormEvent, useState } from 'react'
 export function Task() {
   const [newTaskTex, setNewTaskTex] = useState<string>('')
 
-  const [ task, setTask ] = useState<taskProps[]>([...tasks])
+  const [ taskCollection, setTaskCollection ] = useState<taskProps[]>([...tasks])
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
@@ -23,7 +23,7 @@ export function Task() {
       title: newTaskTex,
       isComplete: false
     }
-    setTask([...task, todo])
+    setTaskCollection([...taskCollection, todo])
     setNewTaskTex('')
   }
 
@@ -32,13 +32,27 @@ export function Task() {
   }
 
   function deleteTask(id: string) {
-    const taskWithoutDeleteOne = task.filter(task => task.id !== id)
-    setTask(taskWithoutDeleteOne)
+    const taskWithoutDeleteOne = taskCollection.filter(task => task.id !== id)
+    setTaskCollection(taskWithoutDeleteOne)
   }
 
-  const isTask = task.length
+  function chekedTask(id: string) {
+    const task = taskCollection.map(atualTask => {
+      if (atualTask.id === id) {
+        return {
+          ...atualTask,
+          isComplete: !atualTask.isComplete
+        }
+      }
+      return atualTask
+    })
+    setTaskCollection(task)
+    console.log(task)
+  }
 
-  const isCheckedTask = task.reduce((acumulador, x) => x.isComplete ? ++acumulador : acumulador, 0)
+  const isTask = taskCollection.length
+
+  const isCheckedTask = taskCollection.reduce((acumulador, x) => x.isComplete ? ++acumulador : acumulador, 0)
 
   return (
     <>
@@ -59,22 +73,23 @@ export function Task() {
         <header className={styles.navTask} >
           <div className={styles.indice} >
             <span className={styles.indexTask} >Tarefas criadas</span>
-            <span className={styles.index} >{task.length}</span>
+            <span className={styles.index} >{taskCollection.length}</span>
           </div>
 
           <div className={styles.indice} >
             <span className={styles.indexTask} >Concluídas</span>
-            <span className={styles.index} >{isCheckedTask} de { task.length }</span>
+            <span className={styles.index} >{isCheckedTask} de { taskCollection.length }</span>
           </div>
         </header>
 
           {isTask > 0 ?
-            task.map(task => (
+            taskCollection.map(task => (
               <CollectionTask
                 id={task.id}
                 title={task.title}
                 isComplete={task.isComplete}
                 onDeleteTask={deleteTask}
+                onCheckedTask={chekedTask}
               />
           ))
           : <EmptyTask />}

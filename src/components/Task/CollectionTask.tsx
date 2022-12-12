@@ -1,5 +1,6 @@
 import { Check, Trash } from 'phosphor-react'
 import { useState } from 'react'
+import { taskProps } from '../../API/Task';
 import styles from './CollectionTask.module.css'
 
 interface CollectionTaskProps {
@@ -7,12 +8,19 @@ interface CollectionTaskProps {
   title: string;
   isComplete: boolean;
   onDeleteTask: (id: string) => void
+  onCheckedTask: (id: string) => void
 }
 
-export function CollectionTask({ id, title, isComplete, onDeleteTask }: CollectionTaskProps) {
+export function CollectionTask({ id, title, isComplete, onDeleteTask, onCheckedTask }: CollectionTaskProps) {
   const [icon, setIcon] = useState(isComplete)
 
   function handleCheck() {
+    if (icon === true) {
+      onCheckedTask(id)
+      setIcon(!icon)
+      return null
+    }
+    onCheckedTask(id)
     setIcon(!icon)
   }
 

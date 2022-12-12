@@ -28,7 +28,7 @@
     <img width="700" style="border-radius: 10px" height="auto" alt="Class-02" title="Class-02" src="public/preview.gif" />
   <div>
 </h1>
-
+To do list é um projeto para ajudar a gerenciar tarefas do dia-a-dia. Possui funções como adicionar tarefa, excluir e adicionar status de concluida 
 <h2 id="technologies"> 🛠 Tecnologias utilizadas: </h2>
 
 - [ReactJS](https://reactjs.org)

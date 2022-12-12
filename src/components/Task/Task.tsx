@@ -1,7 +1,5 @@
 import styles from './Task.module.css'
 
-import { taskProps } from '../../API/Task'
-
 import { v4 as uuidv4 } from 'uuid'
 
 import { CollectionTask } from './CollectionTask'
@@ -53,7 +51,6 @@ export function Task() {
       return atualTask
     })
     setTaskCollection(task)
-    console.log(task)
   }
 
   const isTask = taskCollection.length

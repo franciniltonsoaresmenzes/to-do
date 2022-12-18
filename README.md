@@ -1,3 +1,6 @@
+<p align="center">
+    <img src="src/assets/rocket.svg" width="40"  >
+</>
 <h1 align="center">
     TO do list
 </h1>

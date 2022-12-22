@@ -43,10 +43,10 @@ To do list é um projeto para ajudar a gerenciar tarefas do dia-a-dia. Possui fu
 
 ```bash
 # Clone Repository
-$ git clone https://github.com/franciniltonsoaresmenzes/ignite-feed.git
+$ git clone https://github.com/franciniltonsoaresmenzes/to-do.git
 
 # Go to server folder
-$ cd https://github.com/franciniltonsoaresmenzes/to-do.git
+$ cd to-do
 
 # Install Dependencies
 
